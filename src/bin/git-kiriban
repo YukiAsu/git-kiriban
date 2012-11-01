@@ -19,7 +19,7 @@ then
   while read line
   do
     chk_kiriban $line
-  done < $ANNIVERSARIES
+  done < $KIRIBAN_LIST
 else
   chk_kiriban 1
   chk_kiriban 10
