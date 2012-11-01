@@ -1,0 +1,11 @@
+NAME
+    git-kiriban - "kiriban" is  good turning point number.
+    
+SYNOPSIS
+      $ git kiriban
+
+DESCRIPTION
+      キリ番を表示します。最初のコミット、１０回目のコミット、連番やキリの良い数、あなたの生年月日などお好きな番号を.git-kiribanに書き連ねておいておけば、その番号目のコミットを検出して一覧表示致します。思い出の数字を貴方に。
+
+AUTHOR
+    YukiAsu
