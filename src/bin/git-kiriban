@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# 一つのキリ番をチェックする
+chk_kiriban(){
+  kiriban=$1
+  target=`expr ${count} - ${kiriban} + 1`
+  if [ $target -lt 1 ];then
+    return -1;
+  fi
+  git_log=`git log --date=short --pretty="%C(yellow)%an%Creset:%s%Cgreen[%cd]%Creset" | sed -n ${target}p`
+  echo -e "\033[31m${kiriban} ${git_log}"
+}
+
+count=`git log --oneline | wc -l`
+
+KIRIBAN_LIST=".git-kiriban";
+if [ -r $KIRIBAN_LIST ]
+then
+  while read line
+  do
+    chk_kiriban $line
+  done < $ANNIVERSARIES
+else
+  chk_kiriban 1
+  chk_kiriban 10
+  chk_kiriban 100
+  chk_kiriban 1000
+  chk_kiriban 1024
+  chk_kiriban 1234
+fi
