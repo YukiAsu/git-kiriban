@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
 # 一つのキリ番をチェックする
 chk_kiriban(){
